@@ -4,8 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { DarkanTechnologiesDrawerModule } from '@darkantechnologies/components/drawer';
-import { DarkanTechnologiesScrollbarModule } from '@darkantechnologies/directives/scrollbar';
+import { DoublevPartnersDrawerModule } from '@doublevpartners/components/drawer';
+import { DoublevPartnersScrollbarModule } from '@doublevpartners/directives/scrollbar';
 import { SharedModule } from 'app/shared/shared.module';
 import { QuickChatComponent } from 'app/layout/common/quick-chat/quick-chat.component';
 
@@ -19,8 +19,8 @@ import { QuickChatComponent } from 'app/layout/common/quick-chat/quick-chat.comp
         MatFormFieldModule,
         MatIconModule,
         MatInputModule,
-        DarkanTechnologiesDrawerModule,
-        DarkanTechnologiesScrollbarModule,
+        DoublevPartnersDrawerModule,
+        DoublevPartnersScrollbarModule,
         SharedModule
     ],
     exports     : [

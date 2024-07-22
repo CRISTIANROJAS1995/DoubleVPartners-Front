@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExtraOptions, PreloadAllModules, RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
-import { DarkanTechnologiesModule } from '@darkantechnologies';
-import { DarkanTechnologiesConfigModule } from '@darkantechnologies/services/config';
-import { DarkanTechnologiesMockApiModule } from '@darkantechnologies/lib/mock-api';
+import { DoublevPartnersModule } from '@doublevpartners';
+import { DoublevPartnersConfigModule } from '@doublevpartners/services/config';
+import { DoublevPartnersMockApiModule } from '@doublevpartners/lib/mock-api';
 import { CoreModule } from 'app/core/core.module';
 import { appConfig } from 'app/core/config/app.config';
 import { LayoutModule } from 'app/layout/layout.module';
@@ -27,9 +27,9 @@ const routerConfig: ExtraOptions = {
         BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes, routerConfig),
 
-        // DarkanTechnologies, DarkanTechnologiesConfig & DarkanTechnologiesMockAPI
-        DarkanTechnologiesModule,
-        DarkanTechnologiesConfigModule.forRoot(appConfig),
+        // DoublevPartners, DoublevPartnersConfig & DoublevPartnersMockAPI
+        DoublevPartnersModule,
+        DoublevPartnersConfigModule.forRoot(appConfig),
 
         // Core module of your application
         CoreModule,

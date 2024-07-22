@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { DarkanTechnologiesDrawerModule } from '@darkantechnologies/components/drawer';
+import { DoublevPartnersDrawerModule } from '@doublevpartners/components/drawer';
 import { SettingsComponent } from 'app/layout/common/settings/settings.component';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -16,7 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
         RouterModule,
         MatIconModule,
         MatTooltipModule,
-        DarkanTechnologiesDrawerModule,
+        DoublevPartnersDrawerModule,
         MatButtonModule
     ],
     exports     : [

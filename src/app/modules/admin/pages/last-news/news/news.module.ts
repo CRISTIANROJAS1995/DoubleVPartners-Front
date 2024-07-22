@@ -13,8 +13,8 @@ import { DurationPipe } from 'app/shared/pipes/duration.pipe';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { DarkanTechnologiesDrawerModule } from '@darkantechnologies/components/drawer';
-import { DarkanTechnologiesScrollbarModule } from '@darkantechnologies/directives/scrollbar';
+import { DoublevPartnersDrawerModule } from '@doublevpartners/components/drawer';
+import { DoublevPartnersScrollbarModule } from '@doublevpartners/directives/scrollbar';
 import { NewsComponent } from './news.component';
 import { newsRoutes } from './news.routing';
 
@@ -39,8 +39,8 @@ const pipes = [DurationPipe];
         NgApexchartsModule,
         MatFormFieldModule,
         MatInputModule,
-        DarkanTechnologiesDrawerModule,
-        DarkanTechnologiesScrollbarModule,
+        DoublevPartnersDrawerModule,
+        DoublevPartnersScrollbarModule,
         SharedModule,
     ],
     exports: [pipes],

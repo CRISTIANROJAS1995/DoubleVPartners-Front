@@ -12,7 +12,7 @@
     },
     "newProjectRoot": "projects",
     "projects": {
-        "darkantechnologies": {
+        "doublevpartners": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -26,7 +26,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/darkantechnologies",
+                        "outputPath": "dist/doublevpartners",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -53,14 +53,14 @@
                         ],
                         "stylePreprocessorOptions": {
                             "includePaths": [
-                                "src/@darkantechnologies/styles"
+                                "src/@doublevpartners/styles"
                             ]
                         },
                         "styles": [
-                            "src/@darkantechnologies/styles/tailwind.scss",
-                            "src/@darkantechnologies/styles/themes.scss",
+                            "src/@doublevpartners/styles/tailwind.scss",
+                            "src/@doublevpartners/styles/themes.scss",
                             "src/styles/vendors.scss",
-                            "src/@darkantechnologies/styles/main.scss",
+                            "src/@doublevpartners/styles/main.scss",
                             "src/styles/styles.scss",
                             "src/styles/tailwind.scss"
                         ],
@@ -103,10 +103,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "darkantechnologies:build:production"
+                            "browserTarget": "doublevpartners:build:production"
                         },
                         "development": {
-                            "browserTarget": "darkantechnologies:build:development"
+                            "browserTarget": "doublevpartners:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -114,7 +114,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "darkantechnologies:build"
+                        "browserTarget": "doublevpartners:build"
                     }
                 },
                 "test": {

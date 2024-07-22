@@ -1,7 +1,7 @@
 const path = require('path');
 const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
-const generatePalette = require(path.resolve(__dirname, ('src/@darkantechnologies/tailwind/utils/generate-palette')));
+const generatePalette = require(path.resolve(__dirname, ('src/@doublevpartners/tailwind/utils/generate-palette')));
 
 /**
  * Custom palettes
@@ -192,61 +192,61 @@ const config = {
             typography: ({theme}) => ({
                 DEFAULT: {
                     css: {
-                        color              : 'var(--darkantechnologies-text-default)',
+                        color              : 'var(--doublevpartners-text-default)',
                         '[class~="lead"]'  : {
-                            color: 'var(--darkantechnologies-text-secondary)'
+                            color: 'var(--doublevpartners-text-secondary)'
                         },
                         a                  : {
-                            color: 'var(--darkantechnologies-primary-500)'
+                            color: 'var(--doublevpartners-primary-500)'
                         },
                         strong             : {
-                            color: 'var(--darkantechnologies-text-default)'
+                            color: 'var(--doublevpartners-text-default)'
                         },
                         'ol > li::before'  : {
-                            color: 'var(--darkantechnologies-text-secondary)'
+                            color: 'var(--doublevpartners-text-secondary)'
                         },
                         'ul > li::before'  : {
-                            backgroundColor: 'var(--darkantechnologies-text-hint)'
+                            backgroundColor: 'var(--doublevpartners-text-hint)'
                         },
                         hr                 : {
-                            borderColor: 'var(--darkantechnologies-border)'
+                            borderColor: 'var(--doublevpartners-border)'
                         },
                         blockquote         : {
-                            color          : 'var(--darkantechnologies-text-default)',
-                            borderLeftColor: 'var(--darkantechnologies-border)'
+                            color          : 'var(--doublevpartners-text-default)',
+                            borderLeftColor: 'var(--doublevpartners-border)'
                         },
                         h1                 : {
-                            color: 'var(--darkantechnologies-text-default)'
+                            color: 'var(--doublevpartners-text-default)'
                         },
                         h2                 : {
-                            color: 'var(--darkantechnologies-text-default)'
+                            color: 'var(--doublevpartners-text-default)'
                         },
                         h3                 : {
-                            color: 'var(--darkantechnologies-text-default)'
+                            color: 'var(--doublevpartners-text-default)'
                         },
                         h4                 : {
-                            color: 'var(--darkantechnologies-text-default)'
+                            color: 'var(--doublevpartners-text-default)'
                         },
                         'figure figcaption': {
-                            color: 'var(--darkantechnologies-text-secondary)'
+                            color: 'var(--doublevpartners-text-secondary)'
                         },
                         code               : {
-                            color     : 'var(--darkantechnologies-text-default)',
+                            color     : 'var(--doublevpartners-text-default)',
                             fontWeight: '500'
                         },
                         'a code'           : {
-                            color: 'var(--darkantechnologies-primary)'
+                            color: 'var(--doublevpartners-primary)'
                         },
                         pre                : {
                             color          : theme('colors.white'),
                             backgroundColor: theme('colors.gray.800')
                         },
                         thead              : {
-                            color            : 'var(--darkantechnologies-text-default)',
-                            borderBottomColor: 'var(--darkantechnologies-border)'
+                            color            : 'var(--doublevpartners-text-default)',
+                            borderBottomColor: 'var(--doublevpartners-border)'
                         },
                         'tbody tr'         : {
-                            borderBottomColor: 'var(--darkantechnologies-border)'
+                            borderBottomColor: 'var(--doublevpartners-border)'
                         },
                         'ol[type="A" s]'   : false,
                         'ol[type="a" s]'   : false,
@@ -281,10 +281,10 @@ const config = {
     },
     plugins    : [
 
-        // DarkanTechnologies - Tailwind plugins
-        require(path.resolve(__dirname, ('src/@darkantechnologies/tailwind/plugins/utilities'))),
-        require(path.resolve(__dirname, ('src/@darkantechnologies/tailwind/plugins/icon-size'))),
-        require(path.resolve(__dirname, ('src/@darkantechnologies/tailwind/plugins/theming')))({themes}),
+        // DoublevPartners - Tailwind plugins
+        require(path.resolve(__dirname, ('src/@doublevpartners/tailwind/plugins/utilities'))),
+        require(path.resolve(__dirname, ('src/@doublevpartners/tailwind/plugins/icon-size'))),
+        require(path.resolve(__dirname, ('src/@doublevpartners/tailwind/plugins/theming')))({themes}),
 
         // Other third party and/or custom plugins
         require('@tailwindcss/typography')({modifiers: ['sm', 'lg']}),

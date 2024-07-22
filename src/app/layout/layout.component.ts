@@ -2,10 +2,10 @@ import { Component, Inject, OnDestroy, OnInit, Renderer2, ViewEncapsulation } fr
 import { DOCUMENT } from '@angular/common';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { combineLatest, filter, map, Subject, takeUntil } from 'rxjs';
-import { DarkanTechnologiesConfigService } from '@darkantechnologies/services/config';
-import { DarkanTechnologiesMediaWatcherService } from '@darkantechnologies/services/media-watcher';
-import { DarkanTechnologiesPlatformService } from '@darkantechnologies/services/platform';
-import { DARKAN_VERSION } from '@darkantechnologies/version';
+import { DoublevPartnersConfigService } from '@doublevpartners/services/config';
+import { DoublevPartnersMediaWatcherService } from '@doublevpartners/services/media-watcher';
+import { DoublevPartnersPlatformService } from '@doublevpartners/services/platform';
+import { DOUBLEVPARTNERS_VERSION } from '@doublevpartners/version';
 import { Layout } from 'app/layout/layout.types';
 import { AppConfig } from 'app/core/config/app.config';
 
@@ -31,9 +31,9 @@ export class LayoutComponent implements OnInit, OnDestroy
         @Inject(DOCUMENT) private _document: any,
         private _renderer2: Renderer2,
         private _router: Router,
-        private _darkantechnologiesConfigService: DarkanTechnologiesConfigService,
-        private _darkantechnologiesMediaWatcherService: DarkanTechnologiesMediaWatcherService,
-        private _darkantechnologiesPlatformService: DarkanTechnologiesPlatformService
+        private _doublevpartnersConfigService: DoublevPartnersConfigService,
+        private _doublevpartnersMediaWatcherService: DoublevPartnersMediaWatcherService,
+        private _doublevpartnersPlatformService: DoublevPartnersPlatformService
     )
     {
     }
@@ -49,8 +49,8 @@ export class LayoutComponent implements OnInit, OnDestroy
     {
         // Set the theme and scheme based on the configuration
         combineLatest([
-            this._darkantechnologiesConfigService.config$,
-            this._darkantechnologiesMediaWatcherService.onMediaQueryChange$(['(prefers-color-scheme: dark)', '(prefers-color-scheme: light)'])
+            this._doublevpartnersConfigService.config$,
+            this._doublevpartnersMediaWatcherService.onMediaQueryChange$(['(prefers-color-scheme: dark)', '(prefers-color-scheme: light)'])
         ]).pipe(
             takeUntil(this._unsubscribeAll),
             map(([config, mql]) => {
@@ -81,7 +81,7 @@ export class LayoutComponent implements OnInit, OnDestroy
         });
 
         // Subscribe to config changes
-        this._darkantechnologiesConfigService.config$
+        this._doublevpartnersConfigService.config$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((config: AppConfig) => {
 
@@ -103,10 +103,10 @@ export class LayoutComponent implements OnInit, OnDestroy
         });
 
         // Set the app version
-        this._renderer2.setAttribute(this._document.querySelector('[ng-version]'), 'darkantechnologies-version', DARKAN_VERSION);
+        this._renderer2.setAttribute(this._document.querySelector('[ng-version]'), 'doublevpartners-version', DOUBLEVPARTNERS_VERSION);
 
         // Set the OS name
-        this._renderer2.addClass(this._document.body, this._darkantechnologiesPlatformService.osName);
+        this._renderer2.addClass(this._document.body, this._doublevpartnersPlatformService.osName);
     }
 
     /**

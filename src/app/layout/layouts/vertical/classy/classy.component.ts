@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, firstValueFrom, takeUntil } from 'rxjs';
-import { DarkanTechnologiesMediaWatcherService } from '@darkantechnologies/services/media-watcher';
-import { DarkanTechnologiesNavigationService, DarkanTechnologiesVerticalNavigationComponent } from '@darkantechnologies/components/navigation';
+import { DoublevPartnersMediaWatcherService } from '@doublevpartners/services/media-watcher';
+import { DoublevPartnersNavigationService, DoublevPartnersVerticalNavigationComponent } from '@doublevpartners/components/navigation';
 import { Navigation, defaultNavigation } from 'app/core/navigation/navigation.types';
 import { NavigationService } from 'app/core/navigation/navigation.service';
 import { User } from 'app/core/user/user.types';
@@ -30,8 +30,8 @@ export class ClassyLayoutComponent implements OnInit, OnDestroy {
         private _router: Router,
         private _navigationService: NavigationService,
         private _userService: UserService,
-        private _darkantechnologiesMediaWatcherService: DarkanTechnologiesMediaWatcherService,
-        private _darkantechnologiesNavigationService: DarkanTechnologiesNavigationService
+        private _doublevpartnersMediaWatcherService: DoublevPartnersMediaWatcherService,
+        private _doublevpartnersNavigationService: DoublevPartnersNavigationService
     ) {
     }
 
@@ -60,7 +60,7 @@ export class ClassyLayoutComponent implements OnInit, OnDestroy {
         this.navigation.default = defaultNavigation;
 
         // Subscribe to media changes
-        this._darkantechnologiesMediaWatcherService.onMediaChange$
+        this._doublevpartnersMediaWatcherService.onMediaChange$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(({ matchingAliases }) => {
 
@@ -107,7 +107,7 @@ export class ClassyLayoutComponent implements OnInit, OnDestroy {
      */
     toggleNavigation(name: string): void {
         // Get the navigation
-        const navigation = this._darkantechnologiesNavigationService.getComponent<DarkanTechnologiesVerticalNavigationComponent>(name);
+        const navigation = this._doublevpartnersNavigationService.getComponent<DoublevPartnersVerticalNavigationComponent>(name);
 
         if (navigation) {
             // Toggle the opened status

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DarkanTechnologiesLoadingBarModule } from '@darkantechnologies/components/loading-bar';
+import { DoublevPartnersLoadingBarModule } from '@doublevpartners/components/loading-bar';
 import { SharedModule } from 'app/shared/shared.module';
 import { EmptyLayoutComponent } from 'app/layout/layouts/empty/empty.component';
 
@@ -10,7 +10,7 @@ import { EmptyLayoutComponent } from 'app/layout/layouts/empty/empty.component';
     ],
     imports     : [
         RouterModule,
-        DarkanTechnologiesLoadingBarModule,
+        DoublevPartnersLoadingBarModule,
         SharedModule
     ],
     exports     : [

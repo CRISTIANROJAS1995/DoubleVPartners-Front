@@ -5,9 +5,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { DarkanTechnologiesNavigationModule } from '@darkantechnologies/components/navigation';
-import { DarkanTechnologiesLoadingBarModule } from '@darkantechnologies/components/loading-bar';
-import { DarkanTechnologiesFullscreenModule } from '@darkantechnologies/components/fullscreen/fullscreen.module';
+import { DoublevPartnersNavigationModule } from '@doublevpartners/components/navigation';
+import { DoublevPartnersLoadingBarModule } from '@doublevpartners/components/loading-bar';
+import { DoublevPartnersFullscreenModule } from '@doublevpartners/components/fullscreen/fullscreen.module';
 import { LanguagesModule } from 'app/layout/common/languages/languages.module';
 import { MessagesModule } from 'app/layout/common/messages/messages.module';
 import { NotificationsModule } from 'app/layout/common/notifications/notifications.module';
@@ -29,9 +29,9 @@ import { ClassyLayoutComponent } from 'app/layout/layouts/vertical/classy/classy
         MatDividerModule,
         MatIconModule,
         MatMenuModule,
-        DarkanTechnologiesFullscreenModule,
-        DarkanTechnologiesLoadingBarModule,
-        DarkanTechnologiesNavigationModule,
+        DoublevPartnersFullscreenModule,
+        DoublevPartnersLoadingBarModule,
+        DoublevPartnersNavigationModule,
         LanguagesModule,
         MessagesModule,
         NotificationsModule,

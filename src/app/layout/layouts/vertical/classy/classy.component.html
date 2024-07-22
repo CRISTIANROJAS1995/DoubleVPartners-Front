@@ -1,15 +1,15 @@
 <!-- Loading bar -->
-<darkantechnologies-loading-bar></darkantechnologies-loading-bar>
+<doublevpartners-loading-bar></doublevpartners-loading-bar>
 
 <!-- Navigation -->
-<darkantechnologies-vertical-navigation
+<doublevpartners-vertical-navigation
     class="dark bg-gray-900 print:hidden"
     [mode]="isScreenSmall ? 'over' : 'side'"
     [name]="'mainNavigation'"
     [navigation]="navigation.default"
     [opened]="!isScreenSmall">
     <!-- Navigation header hook -->
-    <ng-container darkantechnologiesVerticalNavigationContentHeader>
+    <ng-container doublevpartnersVerticalNavigationContentHeader>
         <div class="flex items-center w-full p-4 pl-6">
             <!-- Logo -->
             <div class="flex items-center justify-center">
@@ -46,14 +46,14 @@
         </div>
     </ng-container>
     <!-- Navigation footer hook -->
-    <!-- <ng-container darkantechnologiesVerticalNavigationContentFooter>
+    <!-- <ng-container doublevpartnersVerticalNavigationContentFooter>
         <div class="flex flex-0 items-center justify-center h-16 pr-6 pl-2 mt-20 mb-4 opacity-12">
             <img
                 class="max-w-26"
                 src="assets/images/svg/logo.svg">
         </div>
     </ng-container> -->
-</darkantechnologies-vertical-navigation>
+</doublevpartners-vertical-navigation>
 
 <!-- Wrapper -->
 <div class="flex flex-col flex-auto w-full min-w-0">
@@ -83,7 +83,7 @@
 
         <!-- Components -->
         <div class="flex items-center pl-2 ml-auto space-x-4">
-            <darkantechnologies-fullscreen class="hidden md:block"></darkantechnologies-fullscreen>
+            <doublevpartners-fullscreen class="hidden md:block"></doublevpartners-fullscreen>
             <languages></languages>
             <user [showAvatar]="false"></user>
             <!-- <search [appearance]="'bar'"></search>
@@ -107,7 +107,7 @@
 
     <!-- Footer -->
     <!--<div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
-        <span class="font-medium text-secondary">DarkanTechnologies &copy; {{currentYear}}</span>
+        <span class="font-medium text-secondary">DoublevPartners &copy; {{currentYear}}</span>
     </div>-->
 
 </div>

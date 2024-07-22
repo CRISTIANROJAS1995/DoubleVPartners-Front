@@ -13,7 +13,7 @@ import {
     Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { darkantechnologiesAnimations } from '@darkantechnologies/animations';
+import { doublevpartnersAnimations } from '@doublevpartners/animations';
 import { FileUploadComponent } from 'app/shared/components/file-upload/file-upload.component';
 import * as storage from '@aws-amplify/storage';
 import imageCompression from 'browser-image-compression';
@@ -31,7 +31,7 @@ import { UserResponseDtoModel } from 'app/core/models/user/user-response-dto-mod
     selector: 'edit-user',
     templateUrl: './edit-user.component.html',
     encapsulation: ViewEncapsulation.None,
-    animations: darkantechnologiesAnimations,
+    animations: doublevpartnersAnimations,
 })
 export class EditUserComponent implements OnInit {
     @ViewChild('editUserNgForm') editUserNgForm: NgForm;

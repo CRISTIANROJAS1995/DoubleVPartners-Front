@@ -1,18 +1,18 @@
 <!-- Loading bar -->
-<darkantechnologies-loading-bar></darkantechnologies-loading-bar>
+<doublevpartners-loading-bar></doublevpartners-loading-bar>
 
 <div class="flex flex-auto justify-center w-full sm:p-4 md:p-8 bg-gray-200 dark:bg-card">
 
     <!-- Navigation -->
     <ng-container *ngIf="isScreenSmall">
-        <darkantechnologies-vertical-navigation
+        <doublevpartners-vertical-navigation
             class="dark bg-gray-900 print:hidden"
             [mode]="'over'"
             [name]="'mainNavigation'"
             [navigation]="navigation.default"
             [opened]="false">
             <!-- Navigation header hook -->
-            <ng-container darkantechnologiesVerticalNavigationContentHeader>
+            <ng-container doublevpartnersVerticalNavigationContentHeader>
                 <!-- Logo -->
                 <div class="flex items-center h-20 pt-6 px-8">
                     <img
@@ -20,7 +20,7 @@
                         src="assets/images/logo/logo.png">
                 </div>
             </ng-container>
-        </darkantechnologies-vertical-navigation>
+        </doublevpartners-vertical-navigation>
     </ng-container>
 
     <!-- Wrapper -->
@@ -48,10 +48,10 @@
                         alt="Logo image">
                 </div>
                 <!-- Horizontal navigation -->
-                <darkantechnologies-horizontal-navigation
+                <doublevpartners-horizontal-navigation
                     class="mr-2"
                     [name]="'mainNavigation'"
-                    [navigation]="navigation.horizontal"></darkantechnologies-horizontal-navigation>
+                    [navigation]="navigation.horizontal"></doublevpartners-horizontal-navigation>
             </ng-container>
             <!-- Navigation toggle button -->
             <ng-container *ngIf="isScreenSmall">
@@ -65,7 +65,7 @@
             <!-- Components -->
             <div class="flex items-center pl-2 ml-auto space-x-1 sm:space-x-2">
                 <!-- <languages></languages> -->
-                <darkantechnologies-fullscreen class="hidden md:block"></darkantechnologies-fullscreen>
+                <doublevpartners-fullscreen class="hidden md:block"></doublevpartners-fullscreen>
                 <!-- <search [appearance]="'bar'"></search>
                 <shortcuts></shortcuts>
                 <messages></messages>
@@ -83,7 +83,7 @@
 
         <!-- Footer -->
         <div class="relative flex flex-0 items-center justify-start w-full h-16 sm:h-20 px-6 sm:px-8 z-49 bg-card border-t dark:bg-default print:hidden">
-            <span class="font-medium text-secondary">DarkanTechnologies &copy; {{currentYear}}</span>
+            <span class="font-medium text-secondary">DoublevPartners &copy; {{currentYear}}</span>
         </div>
 
     </div>

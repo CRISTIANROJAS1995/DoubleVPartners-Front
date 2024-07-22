@@ -6,8 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { DarkanTechnologiesCardModule } from '@darkantechnologies/components/card';
-import { DarkanTechnologiesAlertModule } from '@darkantechnologies/components/alert';
+import { DoublevPartnersCardModule } from '@doublevpartners/components/card';
+import { DoublevPartnersAlertModule } from '@doublevpartners/components/alert';
 import { SharedModule } from 'app/shared/shared.module';
 import { AuthSignInComponent } from 'app/modules/auth/sign-in/sign-in.component';
 import { authSignInRoutes } from 'app/modules/auth/sign-in/sign-in.routing';
@@ -26,8 +26,8 @@ import { authSignInRoutes } from 'app/modules/auth/sign-in/sign-in.routing';
         MatIconModule,
         MatInputModule,
         MatProgressSpinnerModule,
-        DarkanTechnologiesCardModule,
-        DarkanTechnologiesAlertModule,
+        DoublevPartnersCardModule,
+        DoublevPartnersAlertModule,
         SharedModule,
     ],
     schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

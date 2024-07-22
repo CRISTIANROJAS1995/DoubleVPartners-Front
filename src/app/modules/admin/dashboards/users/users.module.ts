@@ -14,8 +14,8 @@ import { dashboardUsersRoutes } from './users.routing';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { DarkanTechnologiesDrawerModule } from '@darkantechnologies/components/drawer';
-import { DarkanTechnologiesScrollbarModule } from '@darkantechnologies/directives/scrollbar';
+import { DoublevPartnersDrawerModule } from '@doublevpartners/components/drawer';
+import { DoublevPartnersScrollbarModule } from '@doublevpartners/directives/scrollbar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { DurationPipe } from 'app/shared/pipes/duration.pipe';
 
@@ -37,8 +37,8 @@ import { DurationPipe } from 'app/shared/pipes/duration.pipe';
         NgApexchartsModule,
         MatFormFieldModule,
         MatInputModule,
-        DarkanTechnologiesDrawerModule,
-        DarkanTechnologiesScrollbarModule,
+        DoublevPartnersDrawerModule,
+        DoublevPartnersScrollbarModule,
         SharedModule,
         MatPaginatorModule
     ],

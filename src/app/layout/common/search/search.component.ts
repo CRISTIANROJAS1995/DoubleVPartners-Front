@@ -3,14 +3,14 @@ import { UntypedFormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { debounceTime, filter, map, Subject, takeUntil } from 'rxjs';
-import { darkantechnologiesAnimations } from '@darkantechnologies/animations/public-api';
+import { doublevpartnersAnimations } from '@doublevpartners/animations/public-api';
 
 @Component({
     selector     : 'search',
     templateUrl  : './search.component.html',
     encapsulation: ViewEncapsulation.None,
-    exportAs     : 'darkantechnologiesSearch',
-    animations   : darkantechnologiesAnimations
+    exportAs     : 'doublevpartnersSearch',
+    animations   : doublevpartnersAnimations
 })
 export class SearchComponent implements OnChanges, OnInit, OnDestroy
 {

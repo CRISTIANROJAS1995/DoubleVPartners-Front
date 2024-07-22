@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { DarkanTechnologiesConfigService } from '@darkantechnologies/services/config';
+import { DoublevPartnersConfigService } from '@doublevpartners/services/config';
 import { AppConfig, Scheme, Theme, Themes } from 'app/core/config/app.config';
 import { Layout } from 'app/layout/layout.types';
 
@@ -41,7 +41,7 @@ export class SettingsComponent implements OnInit, OnDestroy
      */
     constructor(
         private _router: Router,
-        private _darkantechnologiesConfigService: DarkanTechnologiesConfigService
+        private _doublevpartnersConfigService: DoublevPartnersConfigService
     )
     {
     }
@@ -56,7 +56,7 @@ export class SettingsComponent implements OnInit, OnDestroy
     ngOnInit(): void
     {
         // Subscribe to config changes
-        this._darkantechnologiesConfigService.config$
+        this._doublevpartnersConfigService.config$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((config: AppConfig) => {
 
@@ -95,7 +95,7 @@ export class SettingsComponent implements OnInit, OnDestroy
         }).then(() => {
 
             // Set the config
-            this._darkantechnologiesConfigService.config = {layout};
+            this._doublevpartnersConfigService.config = {layout};
         });
     }
 
@@ -106,7 +106,7 @@ export class SettingsComponent implements OnInit, OnDestroy
      */
     setScheme(scheme: Scheme): void
     {
-        this._darkantechnologiesConfigService.config = {scheme};
+        this._doublevpartnersConfigService.config = {scheme};
     }
 
     /**
@@ -116,6 +116,6 @@ export class SettingsComponent implements OnInit, OnDestroy
      */
     setTheme(theme: Theme): void
     {
-        this._darkantechnologiesConfigService.config = {theme};
+        this._doublevpartnersConfigService.config = {theme};
     }
 }

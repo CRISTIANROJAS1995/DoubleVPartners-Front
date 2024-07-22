@@ -1,10 +1,10 @@
-import { DarkanTechnologiesNavigationItem } from '@darkantechnologies/components/navigation';
+import { DoublevPartnersNavigationItem } from '@doublevpartners/components/navigation';
 
 export class Navigation {
-    compact: DarkanTechnologiesNavigationItem[];
-    default: DarkanTechnologiesNavigationItem[];
-    futuristic: DarkanTechnologiesNavigationItem[];
-    horizontal: DarkanTechnologiesNavigationItem[];
+    compact: DoublevPartnersNavigationItem[];
+    default: DoublevPartnersNavigationItem[];
+    futuristic: DoublevPartnersNavigationItem[];
+    horizontal: DoublevPartnersNavigationItem[];
 
     constructor() {
         this.compact = [];
@@ -14,7 +14,7 @@ export class Navigation {
     }
 }
 
-export const defaultNavigation: DarkanTechnologiesNavigationItem[] = [
+export const defaultNavigation: DoublevPartnersNavigationItem[] = [
     {
         id  : 'divider-1',
         type: 'divider'
@@ -43,7 +43,7 @@ export const defaultNavigation: DarkanTechnologiesNavigationItem[] = [
     }
 ];
 
-export const horizontalNavigation: DarkanTechnologiesNavigationItem[] = [
+export const horizontalNavigation: DoublevPartnersNavigationItem[] = [
     {
         id      : 'usuarios',
         title   : 'Usuarios',

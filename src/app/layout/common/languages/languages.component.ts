@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { take } from 'rxjs';
 import { AvailableLangs, TranslocoService } from '@ngneat/transloco';
-import { DarkanTechnologiesNavigationService, DarkanTechnologiesVerticalNavigationComponent } from '@darkantechnologies/components/navigation';
+import { DoublevPartnersNavigationService, DoublevPartnersVerticalNavigationComponent } from '@doublevpartners/components/navigation';
 
 @Component({
     selector       : 'languages',
@@ -21,7 +21,7 @@ export class LanguagesComponent implements OnInit, OnDestroy
      */
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
-        private _darkantechnologiesNavigationService: DarkanTechnologiesNavigationService,
+        private _doublevpartnersNavigationService: DoublevPartnersNavigationService,
         private _translocoService: TranslocoService
     )
     {
@@ -110,7 +110,7 @@ export class LanguagesComponent implements OnInit, OnDestroy
         // it's up to you.
 
         // Get the component -> navigation data -> item
-        const navComponent = this._darkantechnologiesNavigationService.getComponent<DarkanTechnologiesVerticalNavigationComponent>('mainNavigation');
+        const navComponent = this._doublevpartnersNavigationService.getComponent<DoublevPartnersVerticalNavigationComponent>('mainNavigation');
 
         // Return if the navigation component does not exist
         if ( !navComponent )
@@ -122,7 +122,7 @@ export class LanguagesComponent implements OnInit, OnDestroy
         const navigation = navComponent.navigation;
 
         // Get the Project dashboard item and update its title
-        const projectDashboardItem = this._darkantechnologiesNavigationService.getItem('dashboards.project', navigation);
+        const projectDashboardItem = this._doublevpartnersNavigationService.getItem('dashboards.project', navigation);
         if ( projectDashboardItem )
         {
             this._translocoService.selectTranslate('Project').pipe(take(1))
@@ -137,7 +137,7 @@ export class LanguagesComponent implements OnInit, OnDestroy
         }
 
         // Get the Analytics dashboard item and update its title
-        const analyticsDashboardItem = this._darkantechnologiesNavigationService.getItem('dashboards.analytics', navigation);
+        const analyticsDashboardItem = this._doublevpartnersNavigationService.getItem('dashboards.analytics', navigation);
         if ( analyticsDashboardItem )
         {
             this._translocoService.selectTranslate('Analytics').pipe(take(1))

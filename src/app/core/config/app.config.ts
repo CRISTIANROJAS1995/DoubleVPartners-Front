@@ -21,11 +21,11 @@ export interface AppConfig
 
 /**
  * Default configuration for the entire application. This object is used by
- * DarkanTechnologiesConfigService to set the default configuration.
+ * DoublevPartnersConfigService to set the default configuration.
  *
  * If you need to store global configuration for your app, you can use this
  * object to set the defaults. To access, update and reset the config, use
- * DarkanTechnologiesConfigService and its methods.
+ * DoublevPartnersConfigService and its methods.
  *
  * "Screens" are carried over to the BreakpointObserver for accessing them within
  * components, and they are required.

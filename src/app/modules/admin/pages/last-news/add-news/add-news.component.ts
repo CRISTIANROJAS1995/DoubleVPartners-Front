@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { darkantechnologiesAnimations } from '@darkantechnologies/animations';
+import { doublevpartnersAnimations } from '@doublevpartners/animations';
 import { FileUploadComponent } from 'app/shared/components/file-upload/file-upload.component';
 import * as storage from '@aws-amplify/storage';
 import imageCompression from 'browser-image-compression';
@@ -15,7 +15,7 @@ import { newsModel } from 'app/core/models/last-news/news.model';
     selector: 'add-news',
     templateUrl: './add-news.component.html',
     encapsulation: ViewEncapsulation.None,
-    animations: darkantechnologiesAnimations
+    animations: doublevpartnersAnimations
 })
 export class AddNewsComponent implements OnInit {
     @ViewChild(FileUploadComponent) hiBeatSelector: FileUploadComponent;

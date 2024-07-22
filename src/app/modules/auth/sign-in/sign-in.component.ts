@@ -7,8 +7,8 @@ import {
     Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { darkantechnologiesAnimations } from '@darkantechnologies/animations';
-import { DarkanTechnologiesAlertType } from '@darkantechnologies/components/alert';
+import { doublevpartnersAnimations } from '@doublevpartners/animations';
+import { DoublevPartnersAlertType } from '@doublevpartners/components/alert';
 import { AuthService } from 'app/core/auth/auth.service';
 import { ResponseLoginModel } from 'app/core/models/user/response-login-model';
 
@@ -18,12 +18,12 @@ import Swal from 'sweetalert2';
     selector: 'auth-sign-in',
     templateUrl: './sign-in.component.html',
     encapsulation: ViewEncapsulation.None,
-    animations: darkantechnologiesAnimations,
+    animations: doublevpartnersAnimations,
 })
 export class AuthSignInComponent implements OnInit {
     @ViewChild('signInNgForm') signInNgForm: NgForm;
 
-    alert: { type: DarkanTechnologiesAlertType; message: string } = {
+    alert: { type: DoublevPartnersAlertType; message: string } = {
         type: 'success',
         message: '',
     };

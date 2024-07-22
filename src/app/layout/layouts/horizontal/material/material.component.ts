@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { DarkanTechnologiesMediaWatcherService } from '@darkantechnologies/services/media-watcher';
-import { DarkanTechnologiesNavigationService, DarkanTechnologiesVerticalNavigationComponent } from '@darkantechnologies/components/navigation';
+import { DoublevPartnersMediaWatcherService } from '@doublevpartners/services/media-watcher';
+import { DoublevPartnersNavigationService, DoublevPartnersVerticalNavigationComponent } from '@doublevpartners/components/navigation';
 import { Navigation } from 'app/core/navigation/navigation.types';
 import { NavigationService } from 'app/core/navigation/navigation.service';
 
@@ -24,8 +24,8 @@ export class MaterialLayoutComponent implements OnInit, OnDestroy
         private _activatedRoute: ActivatedRoute,
         private _router: Router,
         private _navigationService: NavigationService,
-        private _darkantechnologiesMediaWatcherService: DarkanTechnologiesMediaWatcherService,
-        private _darkantechnologiesNavigationService: DarkanTechnologiesNavigationService
+        private _doublevpartnersMediaWatcherService: DoublevPartnersMediaWatcherService,
+        private _doublevpartnersNavigationService: DoublevPartnersNavigationService
     )
     {
     }
@@ -59,7 +59,7 @@ export class MaterialLayoutComponent implements OnInit, OnDestroy
             });
 
         // Subscribe to media changes
-        this._darkantechnologiesMediaWatcherService.onMediaChange$
+        this._doublevpartnersMediaWatcherService.onMediaChange$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(({matchingAliases}) => {
 
@@ -90,7 +90,7 @@ export class MaterialLayoutComponent implements OnInit, OnDestroy
     toggleNavigation(name: string): void
     {
         // Get the navigation
-        const navigation = this._darkantechnologiesNavigationService.getComponent<DarkanTechnologiesVerticalNavigationComponent>(name);
+        const navigation = this._doublevpartnersNavigationService.getComponent<DoublevPartnersVerticalNavigationComponent>(name);
 
         if ( navigation )
         {
