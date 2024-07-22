@@ -1,0 +1,119 @@
+<div class="flex flex-row w-full">
+
+    <div class="flex flex-col flex-auto my-10 mx-10">
+           
+    <!-- Form -->
+    <form form [formGroup]="editUserForm" #editUserNgForm="ngForm">
+
+        <div class="w-full">
+            <div class="text-xl">Editar usuario</div>
+            <div class="text-secondary">Alphra Glamouria</div>
+        </div>
+
+        <div class="grid xl:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-6 w-full mt-8">
+
+            <!-- Nombre -->
+            <div>
+                <mat-form-field class="fuse-mat-no-subscript text-white w-full">
+                    <mat-label>Nombre</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:user'"
+                        matPrefix></mat-icon>
+                    <input
+                        class="text-md text-white justify-start items-start"
+                        [formControlName]="'name'"
+                        matInput>
+                    <mat-error
+                        class="text-1xl"
+                        *ngIf="
+                        editUserForm.get('name').hasError('required')">
+                        Campo requerido
+                    </mat-error>
+                </mat-form-field>
+
+            </div>
+
+            <!-- Username -->
+            <div>
+                <mat-form-field class="fuse-mat-no-subscript fuse-mat-emphasized-affix w-full">
+                    <mat-label>Username</mat-label>
+                    <div
+                        class="text-secondary"
+                        matPrefix>
+                        fusetheme.com/
+                    </div>
+                    <input
+                        [formControlName]="'username'"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Title -->
+            <div>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-label>Title</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:briefcase'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'title'"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Company -->
+            <div>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-label>Company</mat-label>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:office-building'"
+                        matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'company'"
+                        matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Rol -->
+            <div class="sm:col-span-2">
+                    <mat-form-field class="fuse-mat-no-subscript w-full">
+                        <mat-label>Rol</mat-label>
+                        <mat-icon
+                            class="icon-size-5"
+                            [svgIcon]="'heroicons_solid:location-marker'"
+                            matPrefix></mat-icon>
+                        <mat-select [formControlName]="'role'" (selectionChange)="changeRol($event)">
+                            <mat-option [value]="item.id" *ngFor="let item of lstRol">{{item.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+            </div>
+            
+        </div>
+
+        <!-- Divider -->
+        <div class="mt-11 mb-10 border-t"></div>
+
+        <!-- Actions -->
+        <div class="flex items-center justify-end">
+            <button
+                class="ml-4"
+                mat-flat-button
+                type="button"
+                (click)="sendData()"
+                [color]="'primary'">Guardar
+            </button>
+        </div>
+
+    </form>
+    
+    </div>
+
+</div>
+
+
+
+
+

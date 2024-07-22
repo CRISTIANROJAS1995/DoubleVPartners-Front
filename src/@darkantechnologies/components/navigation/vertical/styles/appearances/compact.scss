@@ -1,0 +1,112 @@
+/* Variables */
+:root {
+    --darkantechnologies-vertical-navigation-compact-width: 112px;
+}
+
+darkantechnologies-vertical-navigation {
+
+    /* Compact appearance overrides */
+    &.darkantechnologies-vertical-navigation-appearance-compact {
+        width: var(--darkantechnologies-vertical-navigation-compact-width);
+        min-width: var(--darkantechnologies-vertical-navigation-compact-width);
+        max-width: var(--darkantechnologies-vertical-navigation-compact-width);
+
+        /* Left positioned */
+        &.darkantechnologies-vertical-navigation-position-left {
+
+            /* Side mode */
+            &.darkantechnologies-vertical-navigation-mode-side {
+                margin-left: calc(var(--darkantechnologies-vertical-navigation-compact-width) * -1);
+            }
+
+            /* Opened */
+            &.darkantechnologies-vertical-navigation-opened {
+                margin-left: 0;
+            }
+        }
+
+        /* Right positioned */
+        &.darkantechnologies-vertical-navigation-position-right {
+
+            /* Side mode */
+            &.darkantechnologies-vertical-navigation-mode-side {
+                margin-right: calc(var(--darkantechnologies-vertical-navigation-compact-width) * -1);
+            }
+
+            /* Opened */
+            &.darkantechnologies-vertical-navigation-opened {
+                margin-right: 0;
+            }
+
+            /* Aside wrapper */
+            .darkantechnologies-vertical-navigation-aside-wrapper {
+                left: auto;
+                right: var(--darkantechnologies-vertical-navigation-compact-width);
+            }
+        }
+
+        /* Wrapper */
+        .darkantechnologies-vertical-navigation-wrapper {
+
+            /* Content */
+            .darkantechnologies-vertical-navigation-content {
+
+                > darkantechnologies-vertical-navigation-aside-item,
+                > darkantechnologies-vertical-navigation-basic-item {
+
+                    .darkantechnologies-vertical-navigation-item-wrapper {
+                        margin: 4px 8px 0 8px;
+
+                        .darkantechnologies-vertical-navigation-item {
+                            flex-direction: column;
+                            justify-content: center;
+                            padding: 12px;
+                            border-radius: 6px;
+
+                            .darkantechnologies-vertical-navigation-item-icon {
+                                margin-right: 0;
+                            }
+
+                            .darkantechnologies-vertical-navigation-item-title-wrapper {
+                                margin-top: 8px;
+
+                                .darkantechnologies-vertical-navigation-item-title {
+                                    font-size: 12px;
+                                    font-weight: 500;
+                                    text-align: center;
+                                    line-height: 16px;
+                                }
+
+                                .darkantechnologies-vertical-navigation-item-subtitle {
+                                    display: none !important;
+                                }
+                            }
+
+                            .darkantechnologies-vertical-navigation-item-badge {
+                                position: absolute;
+                                top: 12px;
+                                left: 64px;
+                            }
+                        }
+                    }
+
+                    > darkantechnologies-vertical-navigation-collapsable-item {
+                        display: none
+                    }
+
+                    > darkantechnologies-vertical-navigation-group-item {
+
+                        > .darkantechnologies-vertical-navigation-item-wrapper {
+                            display: none
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Aside wrapper */
+        .darkantechnologies-vertical-navigation-aside-wrapper {
+            left: var(--darkantechnologies-vertical-navigation-compact-width);
+        }
+    }
+}
