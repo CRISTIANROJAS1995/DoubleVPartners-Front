@@ -1,6 +1,10 @@
 # Double V Partners
 
-Este proyecto se generó con [Angular CLI] (https://github.com/angular/angular-cli)
+Este proyecto se generó con las siguientes tecnologias:
+
+- Angular 14
+- Tailwind CSS
+- Angular Material 
 
 ## Development server
 
