@@ -2,9 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, ReplaySubject, tap } from 'rxjs';
 import { environment } from 'environments/environment';
-import { HiBeatDto } from 'app/core/models/hi-beat.dto';
-import { ReactionDto } from 'app/core/models/reaction.dto';
-import { UpdateHibeatResponseModel } from 'app/core/models/hibeat/update-responsive-model';
 import { UserResponseDtoModel } from 'app/core/models/user/user-response-dto-model';
 import { ResponseListModel } from '../models/generic/response-list.model';
 

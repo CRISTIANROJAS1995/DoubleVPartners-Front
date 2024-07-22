@@ -4,8 +4,6 @@ import { BooleanInput } from '@angular/cdk/coercion';
 import { Subject, firstValueFrom, takeUntil } from 'rxjs';
 import { User } from 'app/core/user/user.types';
 import { UserService } from 'app/core/user/user.service';
-import { UserModel } from 'app/core/models/user.dto';
-import { UserModelCls } from 'app/core/models/user-model';
 import { UserResponseDtoModel } from 'app/core/models/user/user-response-dto-model';
 
 @Component({

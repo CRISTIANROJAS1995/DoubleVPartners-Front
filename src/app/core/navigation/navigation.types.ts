@@ -26,11 +26,11 @@ export const defaultNavigation: DoublevPartnersNavigationItem[] = [
         icon    : 'heroicons_outline:home',
         children: [
             {
-                id   : 'dashboards.alphraglamouria',
+                id   : 'dashboards.doublevpartners',
                 title: 'Usuarios',
                 type : 'basic',
                 icon : 'heroicons_solid:users',
-                link : '/dashboards/alphraglamouria'
+                link : '/dashboards/doublevpartners'
             },
             {
                 id   : 'pages.last-news',
@@ -49,7 +49,7 @@ export const horizontalNavigation: DoublevPartnersNavigationItem[] = [
         title   : 'Usuarios',
         type    : 'basic',
         icon    : 'heroicons_solid:users',
-        link    : '/dashboards/alphraglamouria'
+        link    : '/dashboards/doublevpartners'
         // children: [] // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
     },
     {

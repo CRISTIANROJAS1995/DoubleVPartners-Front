@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, Type } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { HibeatResponseModelInstrumentInterest } from 'app/core/models/hibeat/hibeat-response-model';
 @Component({
   selector: 'hibeats-dropdown-menu',
   templateUrl: './dropdown-menu.component.html',
@@ -16,7 +15,7 @@ export class DropdownMenuComponent {
   @Output() optionChange: EventEmitter<string> = new EventEmitter<string>();
 
   //toppings = new FormControl('') ;
-  toppings : HibeatResponseModelInstrumentInterest[] = [] ;
+  toppings : any[] = [] ;
 
   selectOption(option: string) {
     this.optionSelects = this.toppings;

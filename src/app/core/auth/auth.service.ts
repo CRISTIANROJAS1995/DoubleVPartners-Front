@@ -58,7 +58,6 @@ export class AuthService {
      * @param credentials
      */
     signIn(credentials: { email: string; password: string }): Observable<any> {
-
         // Throw error, if the user is already logged in
         if (this._authenticated) {
             return throwError('User is already logged in.');
@@ -68,21 +67,16 @@ export class AuthService {
             .post(`${environment.api}/User/Auth`, credentials)
             .pipe(
                 switchMap((response: ResponseLoginModel) => {
+
                     if (response.result) {
-                        //validate is user admin
-                        if (response.data.userData.role.id == 6) {
-                            // Store the access token in the local storage
-                            this.accessToken = response.data.token;
+                        // Store the access token in the local storage
+                        this.accessToken = response.data.token;
 
-                            // Set the authenticated flag to true
-                            this._authenticated = true;
+                        // Set the authenticated flag to true
+                        this._authenticated = true;
 
-                            // Store the user on the user service
-                            //this._userService.user = response.data.userData;
-                        } else {
-                            response.result = false;
-                            response.message = 'Solo los usuarios administradores pueden ingresar.';
-                        }
+                        // Store the user on the user service
+                        //this._userService.user = response.data.userData;
                     }
 
                     // Return a new observable with the response

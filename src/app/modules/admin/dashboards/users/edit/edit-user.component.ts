@@ -14,14 +14,11 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { doublevpartnersAnimations } from '@doublevpartners/animations';
-import { FileUploadComponent } from 'app/shared/components/file-upload/file-upload.component';
 import * as storage from '@aws-amplify/storage';
 import imageCompression from 'browser-image-compression';
 import { take, filter, takeUntil, Subject } from 'rxjs';
 import Swal from 'sweetalert2';
-import { addPromotion } from 'app/core/models/promotion/add-promotion-model';
 
-import { newsModel } from 'app/core/models/last-news/news.model';
 import { ResponseListModel } from 'app/core/models/generic/response-list.model';
 import { GenericService } from 'app/core/services/generic.service';
 import { DashboardUsersService } from '../users.service';
@@ -106,7 +103,7 @@ export class EditUserComponent implements OnInit {
 
         this._activatedRoute.params.pipe(take(1)).subscribe((params) => {
             if (!params['id']) {
-                this._router.navigate(['/dashboards/alphraglamouria']);
+                this._router.navigate(['/dashboards/doublevpartners']);
                 return;
             } else {
                 this.getById(params['id']);
@@ -128,17 +125,17 @@ export class EditUserComponent implements OnInit {
                 console.log(this.userModel);
                 this.hiddenLoading();
 
-                this.editUserForm.patchValue({
-                    name: this.userModel.name,
-                    lastName: this.userModel.lastName,
-                    identification: this.userModel.identification,
-                    phone: this.userModel.phone,
-                    address: this.userModel.address,
-                    state: this.userModel.state,
-                    typeIdentification: this.userModel.typeIdentification.name,
-                    gender: this.userModel.gender,
-                    role: this.userModel.role.id,
-                });
+                // this.editUserForm.patchValue({
+                //     name: this.userModel.name,
+                //     lastName: this.userModel.lastName,
+                //     identification: this.userModel.identification,
+                //     phone: this.userModel.phone,
+                //     address: this.userModel.address,
+                //     state: this.userModel.state,
+                //     typeIdentification: this.userModel.typeIdentification.name,
+                //     gender: this.userModel.gender,
+                //     role: this.userModel.role.id,
+                // });
             },
             (response) => {
                 this.userModel = new UserResponseDtoModel();
@@ -186,15 +183,15 @@ export class EditUserComponent implements OnInit {
         const dataFormValue = this.editUserForm.value;
 
         //Fields value
-        this.userModel.name = dataFormValue.name;
-        this.userModel.lastName = dataFormValue.lastName;
-        this.userModel.phone = dataFormValue.phone;
-        this.userModel.address = dataFormValue.address;
-        this.userModel.gender = dataFormValue.gender;
-        this.userModel.state = dataFormValue.state;
-        this.userModel.typeIdentification = dataFormValue.typeIdentification;
-        this.userModel.identification = dataFormValue.identification;
-        this.userModel.role = dataFormValue.role;
+        // this.userModel.name = dataFormValue.name;
+        // this.userModel.lastName = dataFormValue.lastName;
+        // this.userModel.phone = dataFormValue.phone;
+        // this.userModel.address = dataFormValue.address;
+        // this.userModel.gender = dataFormValue.gender;
+        // this.userModel.state = dataFormValue.state;
+        // this.userModel.typeIdentification = dataFormValue.typeIdentification;
+        // this.userModel.identification = dataFormValue.identification;
+        // this.userModel.role = dataFormValue.role;
 
         console.log(this.userModel);
 
@@ -203,7 +200,7 @@ export class EditUserComponent implements OnInit {
         if (this.isEdit) {
             this._dashboardUsersService.update(this.userModel).subscribe(() => {
                 this.hiddenLoading();
-                this._router.navigate(['/dashboards/alphraglamouria']);
+                this._router.navigate(['/dashboards/doublevpartners']);
             });
         } else {
             Swal.fire({

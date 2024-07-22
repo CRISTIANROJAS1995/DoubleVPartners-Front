@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { CoverUploadComponent } from './components/cover-upload/cover-upload.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -13,7 +12,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { VideoUploadComponent } from './components/video-upload/video-upload.component';
 
 const components = [
-    FileUploadComponent,
     CoverUploadComponent,
     DropdownMenuComponent,
     PillComponent,

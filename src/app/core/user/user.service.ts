@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable, of, ReplaySubject, tap } from 'rxjs';
 import { User } from 'app/core/user/user.types';
-import { UserModel } from '../models/user.dto';
 import { environment } from 'environments/environment';
-import { UserModelCls } from '../models/user-model';
 import { UserResponseDtoModel } from '../models/user/user-response-dto-model';
 
 @Injectable({

@@ -6,15 +6,15 @@ import { InitialDataResolver } from 'app/app.resolvers';
 
 export const appRoutes: Route[] = [
 
-    // Redirect empty path to '/dashboards/alphraglamouria'
-    { path: '', pathMatch: 'full', redirectTo: 'dashboards/alphraglamouria' },
+    // Redirect empty path to '/dashboards/doublevpartners'
+    { path: '', pathMatch: 'full', redirectTo: 'dashboards/doublevpartners' },
 
-    // Redirect signed in user to the '/dashboards/alphraglamouria'
+    // Redirect signed in user to the '/dashboards/doublevpartners'
     //
     // After the user signs in, the sign in page will redirect the user to the 'signed-in-redirect'
     // path. Below is another redirection for that path to redirect the user to the desired
     // location. This is a small convenience to keep all main routes together here on this file.
-    { path: 'signed-in-redirect', pathMatch: 'full', redirectTo: 'dashboards/alphraglamouria' },
+    { path: 'signed-in-redirect', pathMatch: 'full', redirectTo: 'dashboards/doublevpartners' },
 
     // Auth routes for guests
     {
@@ -27,6 +27,7 @@ export const appRoutes: Route[] = [
         },
         children: [
             { path: 'sign-in', loadChildren: () => import('app/modules/auth/sign-in/sign-in.module').then(m => m.AuthSignInModule) },
+            { path: 'sign-up', loadChildren: () => import('app/modules/auth/sign-up/sign-up.module').then(m => m.AuthSignUpModule) },
         ]
     },
     // Auth routes for authenticated users
@@ -54,14 +55,12 @@ export const appRoutes: Route[] = [
         children: [
             {
                 path: 'dashboards', children: [
-                    { path: 'alphraglamouria', loadChildren: () => import('app/modules/admin/dashboards/users/users.module').then(m => m.DashboardUsersModule) },
+                    { path: 'doublevpartners', loadChildren: () => import('app/modules/admin/dashboards/users/users.module').then(m => m.DashboardUsersModule) },
                 ]
             },
             {
                 path: 'pages', children: [
                     { path: 'edit-user', loadChildren: () => import('app/modules/admin/dashboards/users/edit/edit-user.module').then(m => m.EditUserModule) },
-                    { path: 'last-news', loadChildren: () => import('app/modules/admin/pages/last-news/news/news.module').then(m => m.NewsModule) },
-                    { path: 'add-news', loadChildren: () => import('app/modules/admin/pages/last-news/add-news/add-news.module').then(m => m.AddNewsModule) },
                 ]
             },
 

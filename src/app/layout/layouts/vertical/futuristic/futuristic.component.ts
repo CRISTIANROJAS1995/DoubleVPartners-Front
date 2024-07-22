@@ -7,7 +7,6 @@ import { Navigation } from 'app/core/navigation/navigation.types';
 import { NavigationService } from 'app/core/navigation/navigation.service';
 import { User } from 'app/core/user/user.types';
 import { UserService } from 'app/core/user/user.service';
-import { UserModel } from 'app/core/models/user.dto';
 
 @Component({
     selector     : 'futuristic-layout',

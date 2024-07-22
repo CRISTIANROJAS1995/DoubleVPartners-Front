@@ -18,11 +18,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 import Swal from 'sweetalert2';
-import { HiBeatDto } from 'app/core/models/hi-beat.dto';
-import { ReactionDto } from 'app/core/models/reaction.dto';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserResponseDtoModel } from 'app/core/models/user/user-response-dto-model';
-import { HibeatResponseModel } from 'app/core/models/hibeat/hibeat-response-model';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -115,7 +112,7 @@ export class DashboardUsersComponent
     }
 
     editUser(user: UserResponseDtoModel) {
-        this._router.navigate(['/pages/edit-user', user.identifier]);
+        //this._router.navigate(['/pages/edit-user', user.identifier]);
     }
 
 }

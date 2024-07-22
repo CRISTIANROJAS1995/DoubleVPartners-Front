@@ -4,9 +4,8 @@
 
 export const environment = {
     production: false,
-    api: 'http://alphraglamouria-001-site1.gtempurl.com/api',
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    RAPID_API_KEY: 'ef191ae154msha289cec188273cep13c4f7jsn983e25285ec8',
+    api: 'https://localhost:7198/api',
+    server: "localhost"
 };
 
 /*
