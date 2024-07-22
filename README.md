@@ -1,10 +1,14 @@
 # Double V Partners
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli)
+Este proyecto se generó con [Angular CLI] (https://github.com/angular/angular-cli)
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ejecutar `ng install` para instalar las dependencias.
+
+Ejecutar `ng serve` para un servidor de desarrollo. Navegue hasta `http://localhost:4200/`. La aplicación se recargará automáticamente si cambia alguno de los archivos fuente.
+
+En la carpeta `environments` y archivos `environment`, se configura la url del API.
 
 ## Code scaffolding
 
@@ -12,7 +16,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Ejecute `ng build` para construir el proyecto. Los artefactos de compilación se almacenarán en el directorio `dist/`.
 
 ## Running unit tests
 
