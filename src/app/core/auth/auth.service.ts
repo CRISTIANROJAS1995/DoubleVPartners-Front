@@ -12,6 +12,7 @@ import { AuthUtils } from 'app/core/auth/auth.utils';
 import { UserService } from 'app/core/user/user.service';
 import { environment } from 'environments/environment';
 import { ResponseLoginModel } from '../models/user/response-login-model';
+import { UserRequestModel } from '../models/user/user-request-model';
 
 @Injectable()
 export class AuthService {
@@ -80,6 +81,17 @@ export class AuthService {
                     }
 
                     // Return a new observable with the response
+                    return of(response);
+                })
+            );
+    }
+
+    signUp(request: UserRequestModel): Observable<any> {
+
+        return this._httpClient
+            .post(`${environment.api}/User`, request)
+            .pipe(
+                switchMap((response: ResponseLoginModel) => {
                     return of(response);
                 })
             );

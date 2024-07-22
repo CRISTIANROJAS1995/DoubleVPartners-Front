@@ -31,13 +31,6 @@ export const defaultNavigation: DoublevPartnersNavigationItem[] = [
                 type : 'basic',
                 icon : 'heroicons_solid:users',
                 link : '/dashboards/doublevpartners'
-            },
-            {
-                id   : 'pages.last-news',
-                title: 'Last News',
-                type : 'basic',
-                icon : 'mat_solid:fiber_new',
-                link : '/pages/last-news'
             }
         ]
     }
@@ -51,12 +44,5 @@ export const horizontalNavigation: DoublevPartnersNavigationItem[] = [
         icon    : 'heroicons_solid:users',
         link    : '/dashboards/doublevpartners'
         // children: [] // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
-    },
-    {
-        id      : 'last-news',
-        title   : 'Last News',
-        type    : 'basic',
-        icon    : 'mat_solid:fiber_new',
-        link    : '/pages/last-news'
     }
 ];

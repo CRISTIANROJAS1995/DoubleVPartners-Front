@@ -6,8 +6,8 @@ export const dashboardUsersRoutes: Route[] = [
     {
         path     : '',
         component: DashboardUsersComponent,
-        resolve  : {
-            data: DashboardUsersResolver
-        }
+        // resolve  : {
+        //     data: DashboardUsersResolver
+        // }
     }
 ];

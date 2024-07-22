@@ -8,9 +8,9 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { doublevpartnersAnimations } from '@doublevpartners/animations';
-import { DoublevPartnersAlertType } from '@doublevpartners/components/alert';
 import { AuthService } from 'app/core/auth/auth.service';
 import { ResponseLoginModel } from 'app/core/models/user/response-login-model';
+import { UserRequestModel } from 'app/core/models/user/user-request-model';
 
 import Swal from 'sweetalert2';
 
@@ -23,12 +23,9 @@ import Swal from 'sweetalert2';
 export class AuthSignUpComponent implements OnInit {
     @ViewChild('signUpNgForm') signInNgForm: NgForm;
 
-    alert: { type: DoublevPartnersAlertType; message: string } = {
-        type: 'success',
-        message: '',
-    };
     signUpForm: UntypedFormGroup;
     showAlert: boolean = false;
+    requestUser: UserRequestModel = new UserRequestModel();
 
     /**
      * Constructor
@@ -48,19 +45,13 @@ export class AuthSignUpComponent implements OnInit {
      * On init
      */
     ngOnInit(): void {
-        // Create the form
-        // this.signUpForm = this._formBuilder.group({
-        //     email: ['', [Validators.required, Validators.email]],
-        //     password: ['', Validators.required],
-        //     rememberMe: [''],
-        // });
 
         this.signUpForm = this._formBuilder.group({
-            name      : ['', Validators.required],
             email     : ['', [Validators.required, Validators.email]],
             password  : ['', Validators.required],
-            company   : [''],
-            agreements: ['', Validators.requiredTrue]
+            nombre      : ['', Validators.required],
+            numeroIdentificacion   : [''],
+            telefono   : [''],
         }
     );
     }
@@ -69,10 +60,7 @@ export class AuthSignUpComponent implements OnInit {
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * Sign in
-     */
-    signIn(): void {
+    signUp(): void {
 
         // Return if the form is invalid
         if (this.signUpForm.invalid) {
@@ -87,27 +75,27 @@ export class AuthSignUpComponent implements OnInit {
             return;
         }
 
-        // Disable the form
         this.signUpForm.disable();
 
-        // Hide the alert
-        this.showAlert = false;
+        const dataFormValue = this.signUpForm.value;
+        this.requestUser.email = dataFormValue.email;
+        this.requestUser.password = dataFormValue.password;
+        this.requestUser.nombre = dataFormValue.nombre;
+        this.requestUser.numeroIdentificacion = dataFormValue.numeroIdentificacion;
+        this.requestUser.telefono = dataFormValue.telefono;
 
-        // Sign in
-        this._authService.signIn(this.signUpForm.value).subscribe(
-            (login: ResponseLoginModel) => {
-
-                if (login.result) {
-                    // Set the redirect url.
-                    // The '/signed-in-redirect' is a dummy url to catch the request and redirect the user
-                    // to the correct page after a successful sign in. This way, that url can be set via
-                    // routing file and we don't have to touch here.
-                    const redirectURL =
-                        this._activatedRoute.snapshot.queryParamMap.get(
-                            'redirectURL'
-                        ) || '/signed-in-redirect';
-                    // Navigate to the redirect url
-                    this._router.navigateByUrl(redirectURL);
+        this._authService.signUp(this.requestUser).subscribe(
+            (response: ResponseLoginModel) => {
+                if (response.result) {
+                    Swal.fire({
+                        title: 'Hecho!',
+                        text: 'Tu usuario ha sido creado exitosamente.',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 3000
+                    }).then((result) => {
+                        this._router.navigate(['/sign-in']);
+                    });
                 } else {
                     // Re-enable the form
                     this.signUpForm.enable();
@@ -117,7 +105,7 @@ export class AuthSignUpComponent implements OnInit {
 
                     Swal.fire({
                         title: 'Oops...',
-                        text: login.message,
+                        text: response.message,
                         icon: 'warning',
                         confirmButtonColor: '#cea35a',
                     });
@@ -136,7 +124,4 @@ export class AuthSignUpComponent implements OnInit {
         );
     }
 
-    signUp(): void
-    {
-    }
 }

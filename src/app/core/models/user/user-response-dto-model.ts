@@ -1,4 +1,3 @@
-import { UserResponseSummaryModel } from './user-response-summary-model';
 
 export class UserResponseDtoModel {
     identificador: string;
@@ -20,11 +19,11 @@ export class UserResponseDtoModel {
 
 export class UserResponseGenericDtoModel{
     id: number;
-    name: string;
+    nombre: string;
 
     constructor() {
         this.id =  0;
-        this.name = '';
+        this.nombre = '';
     }
 }
 

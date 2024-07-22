@@ -16,17 +16,6 @@
                 </a>
             </div>
 
-            <!-- Alert -->
-            <fuse-alert
-                class="mt-8 -mb-4"
-                *ngIf="showAlert"
-                [appearance]="'outline'"
-                [showIcon]="false"
-                [type]="alert.type"
-                [@shake]="alert.type === 'error'">
-                {{alert.message}}
-            </fuse-alert>
-
             <!-- Sign Up form -->
             <form
                 class="mt-8"
@@ -34,36 +23,39 @@
 
                 <!-- Name field -->
                 <mat-form-field class="w-full">
-                    <mat-label>Full name</mat-label>
+                    <mat-label>Nombre completo</mat-label>
                     <input
-                        id="name"
+                        id="nombre"
+                        class="text-white"
                         matInput
-                        [formControlName]="'name'">
-                    <mat-error *ngIf="signUpForm.get('name').hasError('required')">
-                        Full name is required
+                        [formControlName]="'nombre'">
+                    <mat-error *ngIf="signUpForm.get('nombre').hasError('required')">
+                        El nombre es requerido
                     </mat-error>
                 </mat-form-field>
 
                 <!-- Email field -->
                 <mat-form-field class="w-full">
-                    <mat-label>Email address</mat-label>
+                    <mat-label>Correo electrónico</mat-label>
                     <input
                         id="email"
+                        class="text-white"
                         matInput
                         [formControlName]="'email'">
                     <mat-error *ngIf="signUpForm.get('email').hasError('required')">
-                        Email address is required
+                        El email es requerido
                     </mat-error>
                     <mat-error *ngIf="signUpForm.get('email').hasError('email')">
-                        Please enter a valid email address
+                        Por favor, introduce una dirección de correo electrónico válida
                     </mat-error>
                 </mat-form-field>
 
                 <!-- Password field -->
                 <mat-form-field class="w-full">
-                    <mat-label>Password</mat-label>
+                    <mat-label>Contraseña</mat-label>
                     <input
                         id="password"
+                        class="text-white"
                         matInput
                         type="password"
                         [formControlName]="'password'"
@@ -83,17 +75,28 @@
                             [svgIcon]="'heroicons_solid:eye-off'"></mat-icon>
                     </button>
                     <mat-error>
-                        Password is required
+                        La contraseña es requerida
                     </mat-error>
                 </mat-form-field>
 
-                <!-- Company field -->
+                <!-- numeroIdentificacion field -->
                 <mat-form-field class="w-full">
-                    <mat-label>Company</mat-label>
+                    <mat-label>Número Identificación</mat-label>
                     <input
-                        id="company-confirm"
+                        id="numeroIdentificacion"
+                        class="text-white"
                         matInput
-                        [formControlName]="'company'">
+                        [formControlName]="'numeroIdentificacion'">
+                </mat-form-field>
+
+                <!-- telefono field -->
+                <mat-form-field class="w-full">
+                    <mat-label>Teléfono</mat-label>
+                    <input
+                        id="telefono"
+                        class="text-white"
+                        matInput
+                        [formControlName]="'telefono'">
                 </mat-form-field>
 
                 <!-- Submit button -->
